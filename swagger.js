@@ -2,9 +2,9 @@ const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    title: "Hack the Lab 2024 API",
+    title: "Expressjs Lambda Boilerplate API",
     description:
-      "Backend api servicing Michigan Lab's Hack the Lab 2024 Hackathon Event",
+      "A boilerplate for ExpressJS applications that can be deployed to AWS Lambda",
   },
   host: "localhost:3000",
 };

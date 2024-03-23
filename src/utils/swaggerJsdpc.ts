@@ -5,7 +5,7 @@ const getOpenapiSpecification = () => {
     definition: {
       openapi: "3.0.0",
       info: {
-        title: "Hack the Lab 2024 API",
+        title: "Expressjs Lambda Boilerplate API",
         version: "1.0.0",
       },
     },

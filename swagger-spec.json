@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Hack the Lab 2024 API",
-    "description": "Backend api servicing Michigan Lab's Hack the Lab 2024 Hackathon Event",
+    "title": "Expressjs Lambda Boilerplate API",
+    "description": "A boilerplate for ExpressJS applications that can be deployed to AWS Lambda",
     "version": "1.0.0"
   },
   "host": "localhost:3000",
