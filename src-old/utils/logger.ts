@@ -25,7 +25,7 @@ function projectName() {
       }
     }
     return projectFolderName;
-  } catch (e) {
+  } catch (e: any) {
     logError(e.toString());
     return "";
   }
@@ -93,20 +93,20 @@ export function logger() {
 
 export type Level = "error" | "warn" | "info" | "http" | "verbose" | "debug";
 
-export function log(message, _loggerlevel: Level = "debug") {
+export function log(message: string, _loggerlevel: Level = "debug") {
   console.log(message);
   //return logger().log({message: message.toString(), level: level});
 }
 
-export function logDebug(message): void {
+export function logDebug(message: any): void {
   log(message, "debug");
 }
-export function logWarn(message): void {
+export function logWarn(message: any): void {
   log(message, "warn");
 }
-export function logInfo(message): void {
+export function logInfo(message: any): void {
   log(message, "info");
 }
-export function logError(message): void {
+export function logError(message: any): void {
   log(message, "error");
 }
