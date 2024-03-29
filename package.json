@@ -34,23 +34,21 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@codegenie/serverless-express": "^4.3.10",
-    "artillery": "^2.0.8",
+    "aws-lambda": "^1.0.7",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "nodemon": "^3.1.0",
-    "rimraf": "^5.0.5",
     "source-map-support": "^0.5.19",
     "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
-    "ts-node": "^10.9.2",
     "tslib": "^2.3.1",
     "winston": "^3.11.0"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.136",
     "@types/chai": "^4.2.21",
     "@types/compression": "^1.7.1",
     "@types/cors": "^2.8.12",
@@ -61,13 +59,15 @@
     "@types/node": "^20.10.0",
     "@types/supertest": "^2.0.11",
     "@types/swagger-ui-express": "^4.1.6",
+    "artillery": "^2.0.8",
     "chai": "^4.3.4",
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
     "mocha": "^9.1.1",
-    "nodemon": "^2.0.12",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
     "supertest": "^6.1.6",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.9.2",
     "typescript": "^4.3.5"
   }
 }

@@ -17,7 +17,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 // NOTE: tests can't find the views directory without this
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "/views"));
 
 router.get("/", (req: Request, res: Response) => {
   const currentInvoke = getCurrentInvoke();
