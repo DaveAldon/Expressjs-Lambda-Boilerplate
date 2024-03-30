@@ -16,7 +16,8 @@
     "kill": "kill -9 $(lsof -ti:8080)",
     "clean-unimported": "npx unimported --fix",
     "build": "tsc",
-    "postbuild": "cp -R src/views dist/ && cp package*json dist/ && cp src/code-genie-logo.png dist/ ",
+    "postbuild_old": "cp -R src/views dist/ && cp package*json dist/ && cp src/code-genie-logo.png dist/ ",
+    "postbuild": "cp package*json dist/",
     "create-bucket": "cross-var aws s3 mb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
     "delete-bucket": "cross-var aws s3 rb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
     "delete-stack": "cross-var aws cloudformation delete-stack --stack-name $npm_package_config_cloudFormationStackName --region $npm_package_config_region",
@@ -35,7 +36,6 @@
   "dependencies": {
     "@codegenie/serverless-express": "^4.3.10",
     "aws-lambda": "^1.0.7",
-    "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
     "ejs": "^3.1.6",
@@ -44,7 +44,7 @@
     "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
-    "tslib": "^2.3.1",
+    "tslib": "^2.6.2",
     "winston": "^3.11.0"
   },
   "devDependencies": {
