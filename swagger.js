@@ -6,10 +6,13 @@ const doc = {
     description:
       "A boilerplate for ExpressJS applications that can be deployed to AWS Lambda",
   },
-  host: "localhost:3000",
+  host: process.env.DEPLOY
+    ? process.env.npm_package_config_lambdaBaseUrl
+    : "localhost:3000",
+  schemes: ["https", "http"],
 };
 
-const outputFile = "./swagger-spec.json";
+const outputFile = "./src/swagger-spec.json";
 const routes = ["src/controllers/**/*.ts"];
 
 swaggerAutogen(outputFile, routes, doc);

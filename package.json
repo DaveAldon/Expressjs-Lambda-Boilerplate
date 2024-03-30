@@ -8,16 +8,16 @@
     "region": "us-east-2",
     "cloudFormationStackName": "ServerlessExpressHttpApiStack",
     "functionName": "",
-    "domain": ""
+    "domain": "",
+    "lambdaBaseUrl": "i50tl1d3ak.execute-api.us-east-2.amazonaws.com/v1"
   },
   "scripts": {
-    "dev": "npm run swagger && nodemon --files --exec ts-node src/index.ts",
+    "dev": "npm run swagger && nodemon --files --exec ts-node src/index.local",
     "swagger": "node ./swagger.js",
     "kill": "kill -9 $(lsof -ti:8080)",
     "clean-unimported": "npx unimported --fix",
     "build": "tsc",
-    "postbuild_old": "cp -R src/views dist/ && cp package*json dist/ && cp src/code-genie-logo.png dist/ ",
-    "postbuild": "cp package*json dist/",
+    "postbuild": "cp package*json dist/ && cp src/swagger-spec*json dist/",
     "create-bucket": "cross-var aws s3 mb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
     "delete-bucket": "cross-var aws s3 rb s3://$npm_package_config_s3BucketName --region $npm_package_config_region",
     "delete-stack": "cross-var aws cloudformation delete-stack --stack-name $npm_package_config_cloudFormationStackName --region $npm_package_config_region",
@@ -26,9 +26,9 @@
     "local": "ts-node scripts/local",
     "sam:build": "sam build --template ./sam-template.yaml",
     "sam:deploy": "cross-var sam deploy --stack-name $npm_package_config_cloudFormationStackName --capabilities CAPABILITY_IAM --s3-bucket $npm_package_config_s3BucketName --s3-prefix $npm_package_name --region $npm_package_config_region --no-fail-on-empty-changeset $(test -n \"$npm_package_config_domain\" && echo \"--parameter-overrides DomainName=$npm_package_config_domain\")",
-    "package-deploy": "npm run build && npm run sam:build && npm run sam:deploy",
+    "package-deploy": "cross-env DEPLOY=true npm run swagger && npm run build && npm run sam:build && npm run sam:deploy",
     "setup": "npm install && (cross-var aws s3api get-bucket-location --bucket $npm_package_config_s3BucketName --region $npm_package_config_region || npm run create-bucket) && npm run package-deploy",
-    "start": "cross-env DEBUG=http NODE_ENV=production ts-node src/app.local",
+    "start": "cross-env DEBUG=http NODE_ENV=production ts-node src/index.local",
     "test": "cross-env NODE_ENV=test mocha",
     "test:watch": "npm test -- -- -w"
   },
