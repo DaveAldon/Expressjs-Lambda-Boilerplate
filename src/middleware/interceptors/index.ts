@@ -1,11 +1,14 @@
+import { ClerkExpressWithAuth } from "@clerk/clerk-sdk-node";
 import { urlencoded, json, RequestHandler } from "express";
+require("dotenv").config();
 
 export const interceptors: RequestHandler[] = [
-  urlencoded({ extended: false }), // Enables URL-encoded parsing for the request body
-  json(), // Enables JSON parsing for the request body
+  urlencoded({ extended: false }),
+  json(),
 
   (_req, _res, next) => {
-    next(); // Passes the request to the next middleware
+    console.log(_req);
+    next();
   },
-  // We can insert additional interceptor functions here
+  ClerkExpressWithAuth({}),
 ];
