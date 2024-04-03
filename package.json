@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "npm run swagger && nodemon --files --exec ts-node src/index.local",
     "swagger": "node ./swagger.js",
-    "kill": "kill -9 $(lsof -ti:8080)",
+    "kill": "kill -9 $(lsof -ti:443)",
     "clean-unimported": "npx unimported --fix",
     "build": "tsc",
     "postbuild": "cp package*json dist/ && cp src/swagger-spec*json dist/",
@@ -39,6 +39,7 @@
     "aws-lambda": "^1.0.7",
     "compression": "^1.6.2",
     "cors": "^2.8.3",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "request": "^2.88.2",

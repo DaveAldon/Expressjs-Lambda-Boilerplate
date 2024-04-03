@@ -5,7 +5,7 @@
     "description": "A boilerplate for ExpressJS applications that can be deployed to AWS Lambda",
     "version": "1.0.0"
   },
-  "host": "localhost:8080/v1",
+  "host": "i50tl1d3ak.execute-api.us-east-2.amazonaws.com/v1",
   "basePath": "/",
   "schemes": [
     "https",

@@ -8,7 +8,7 @@ const doc = {
   },
   host: process.env.DEPLOY
     ? process.env.npm_package_config_lambdaBaseUrl
-    : "localhost:8080/v1",
+    : "localhost/v1",
   schemes: ["https", "http"],
   securityDefinitions: {
     Bearer: {
