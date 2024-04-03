@@ -23,9 +23,9 @@ app.get("/swagger-ui-init.js", (_req, res) => {
       });
     };
   `;
-
   res.type("text/javascript").send(script);
 });
+
 app.use(
   "/swagger-spec.json",
   express.static(path.join(__dirname, "/swagger-spec.json"))
