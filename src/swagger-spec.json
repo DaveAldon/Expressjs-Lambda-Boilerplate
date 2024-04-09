@@ -5,7 +5,7 @@
     "description": "A boilerplate for ExpressJS applications that can be deployed to AWS Lambda",
     "version": "1.0.0"
   },
-  "host": "<ID>.execute-api.us-east-2.amazonaws.com/v1",
+  "host": "localhost/v1",
   "basePath": "/",
   "schemes": [
     "https",
@@ -20,7 +20,7 @@
     }
   },
   "paths": {
-    "/maze/getMaze": {
+    "/example/getExample": {
       "get": {
         "description": "",
         "responses": {

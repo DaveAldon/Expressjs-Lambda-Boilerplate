@@ -1,0 +1,9 @@
+config:
+  target: 'https://localhost/' # replace with your server URL
+  phases:
+    - duration: 60
+      arrivalRate: 20
+scenarios:
+  - flow:
+    - post:
+        url: "/v1/example/getExample"

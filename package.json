@@ -9,7 +9,7 @@
     "cloudFormationStackName": "ServerlessExpressHttpApiStack",
     "functionName": "",
     "domain": "",
-    "lambdaBaseUrl": "<ID>.execute-api.us-east-2.amazonaws.com/v1"
+    "lambdaBaseUrl": "i50tl1d3ak.execute-api.us-east-2.amazonaws.com/v1"
   },
   "scripts": {
     "dev": "npm run swagger && nodemon --files --exec ts-node src/index.local",
